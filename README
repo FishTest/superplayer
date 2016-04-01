@@ -1,0 +1,20 @@
+SuperPlayer配置过程
+1、安装系统必备程序
+sudo apt-get install git-core make tslib libts-bin libsdl-image1.2 libsdl-ttf2.0-0 libsdl-gfx1.2-5
+
+2、安装wiringPi
+wget https://git.drogon.net/?p=wiringPi;a=snapshot;h=b0a60c3302973ca1878d149d61f2f612c8f27fac;sf=tgz
+tar zxvf tar zxvf wiringPi-b0a60c3.tar.gz
+cd zxvf wiringPi-b0a60c3
+./build
+
+3、系统配置
+sudo nano /boot/config.txt
+dtoverlay=pitft28-resistive,rotate=270,speed=64000000
+dtoverlay=gpio-ir,gpio_pin=26
+
+4、安装播放器程序
+git clone https://github.com/fishTest/superplayer.git
+cd superplayer
+sudo ./aoide_pitft
+
