@@ -8,12 +8,17 @@ tar zxvf tar zxvf wiringPi-b0a60c3.tar.gz
 cd zxvf wiringPi-b0a60c3
 ./build
 
-3、系统配置
+3、安装FFMPEG3
+wget https://github.com/FishTest/rpitools/raw/master/ffmpeg_3.0-1_armhf.deb
+sudo dpkg -i ffmpeg_3.0-1_armhf.deb
+rm ffmpeg_3.0-1_armhf.deb
+
+4、系统配置
 sudo nano /boot/config.txt
 dtoverlay=pitft28-resistive,rotate=270,speed=64000000
 dtoverlay=gpio-ir,gpio_pin=26
 
-4、安装播放器程序
+5、安装播放器程序
 git clone https://github.com/fishTest/superplayer.git
 cd superplayer
 sudo ./aoide_pitft
